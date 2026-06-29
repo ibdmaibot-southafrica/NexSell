@@ -210,8 +210,8 @@ export class GitHubAgent {
 
   constructor(config?: Partial<GitHubConfig>) {
     this.github = new GitHubClient({
-      owner: config?.owner || process.env.GITHUB_REPO_OWNER || "nexsell",
-      repo: config?.repo || process.env.GITHUB_REPO_NAME || "nexsell",
+      owner: config?.owner || process.env.GITHUB_REPO_OWNER || "ibdmaibot-southafrica",
+      repo: config?.repo || process.env.GITHUB_REPO_NAME || "NexSell",
       branch: config?.branch || "main",
       token: config?.token || process.env.GITHUB_TOKEN || "",
     });

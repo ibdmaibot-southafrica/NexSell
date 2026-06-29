@@ -31,6 +31,9 @@ export const env = {
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     NEXT_PUBLIC_PAYPAL_CLIENT_ID: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID!,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN!,
+    GITHUB_REPO_OWNER: process.env.GITHUB_REPO_OWNER ?? "ibdmaibot-southafrica",
+    GITHUB_REPO_NAME: process.env.GITHUB_REPO_NAME ?? "NexSell",
   },
 } as const;
 
@@ -62,6 +65,9 @@ const clientSchema = z.object({
   NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().min(1),
   NEXT_PUBLIC_PAYPAL_CLIENT_ID: z.string().min(1),
   NEXT_PUBLIC_APP_URL: z.string().url(),
+  GITHUB_TOKEN: z.string().min(1),
+  GITHUB_REPO_OWNER: z.string().default("ibdmaibot-southafrica"),
+  GITHUB_REPO_NAME: z.string().default("NexSell"),
 });
 
 // Only validate in production to avoid dev friction
